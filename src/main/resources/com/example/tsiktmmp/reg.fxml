@@ -41,7 +41,7 @@
     <Label text="Login:" GridPane.columnIndex="0"
            GridPane.rowIndex="1" >
     </Label>
-    <TextField fx:id="textField" prefHeight="40"
+    <TextField fx:id="usrnmField" prefHeight="40"
                GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <Label text="Email" GridPane.columnIndex="0"
@@ -62,6 +62,10 @@
     <Label fx:id="welcomeText"
            GridPane.columnIndex="1" GridPane.rowIndex="0">
 
+    </Label>
+
+    <Label text="I already registered" GridPane.columnIndex="0"
+           GridPane.rowIndex="5" onMouseClicked="#switchOnClick" fx:id="sLabel">
     </Label>
 
     <Button fx:id="sButton" text="Sign in"
