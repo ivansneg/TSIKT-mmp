@@ -19,7 +19,8 @@ public class Client {
         this.SERVER_PORT = serverPort;
     }
 
-    public void startClient(String message1,String message2,String message3) {
+    public boolean startClient(String message1,String message2,String message3,String message4) {
+        boolean result = false;
         try {
             socket = new Socket(SERVER_IP, SERVER_PORT);
             System.out.println("Connected to server");
@@ -33,11 +34,13 @@ public class Client {
                 out.println(message1);
                 if (message2 != null){ out.println(message2);}
                 if (message3 != null){ out.println(message3);}
+                if (message4 != null){ out.println(message4);}
 
                 // Receive and display the response from the server
                 Scanner in = new Scanner(socket.getInputStream());
-                String serverResponse = in.nextLine();
-                return serverResponse;
+                String serverResponseString = in.nextLine();
+                Boolean serverResponse = Boolean.valueOf(serverResponseString);
+                result = serverResponse;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,7 +53,9 @@ public class Client {
                 e.printStackTrace();
             }
         }
+        return result;
     }
+
 
     public void Login(String usrn,String password){
 
