@@ -29,16 +29,17 @@ public class LoginController {
         //welcomeText.setText("Noice!You signed in)");
         final String SERVER_IP = "localhost";
         final int SERVER_PORT = 12345;
-        String decoyString = null;
+
 
         // Create an instance of the Client class
         Client client = new Client(SERVER_IP, SERVER_PORT);
 
         // Call the startClient method to initiate the client logic
-        if (client.startClient(textField.getText(),passwordField.getText(),decoyString)){
-           loadMainScene();
+        if (client.startClient("login",textField.getText(), passwordField.getText(),"decoyString")){
+            System.out.println("TRue");
+            loadMainScene();
         } else
-            welcomeText.setText("Login or password is incorrect!"):
+            welcomeText.setText("Login or password is incorrect!");
 
 
     }
@@ -58,6 +59,22 @@ public class LoginController {
             stage.setScene(scene);
 
             RegController regController = loader.getController();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+
+    }
+    private void loadMainScene() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("mainScene.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage stage = (Stage) sButton.getScene().getWindow();
+            stage.setScene(scene);
+
+            MainSceneController mainSceneController = loader.getController();
         } catch (IOException e){
             e.printStackTrace();
         }
