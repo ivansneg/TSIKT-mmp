@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+
+<AnchorPane prefHeight="409.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tsiktmmp.MainSceneController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="24.0" prefWidth="535.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Library" />
+            <Menu mnemonicParsing="false" text="My bookshelff" />
+            <Menu mnemonicParsing="false" text="Add book" />
+            <Menu mnemonicParsing="false" text="Chat" />
+            <Menu mnemonicParsing="false" text="Settings" />
+         </menus>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </MenuBar>
+
+      <!-- Add the GridPane here -->
+      <GridPane fx:id="gridPane" layoutY="30.0">
+         <!-- GridPane contents will be populated by the Java code -->
+      </GridPane>
+   </children>
+   <opaqueInsets>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+   </opaqueInsets>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
