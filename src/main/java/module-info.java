@@ -7,6 +7,7 @@ module com.example.tsiktmmp {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
 
+
     opens com.example.tsiktmmp to javafx.fxml;
     exports com.example.tsiktmmp;
 }
