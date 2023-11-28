@@ -5,16 +5,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-
-<AnchorPane prefHeight="409.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tsiktmmp.MainSceneController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tsiktmmp.MainSceneController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="24.0" prefWidth="535.0">
          <menus>
             <Menu mnemonicParsing="false" text="Library" />
             <Menu mnemonicParsing="false" text="My bookshelff" />
-            <Menu mnemonicParsing="false" text="Add book" />
-            <Menu mnemonicParsing="false" text="Chat" />
+            <Menu mnemonicParsing="false" text="Add book">
+               <items>
+                  <MenuItem fx:id="addBook" mnemonicParsing="false" onAction="#loadScene1" text="Add book" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Requests" >
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#loadScene2" text="Open requests" />
+               </items>
+            </Menu>
             <Menu mnemonicParsing="false" text="Settings" />
          </menus>
          <opaqueInsets>
@@ -23,7 +29,7 @@
       </MenuBar>
 
       <!-- Add the GridPane here -->
-      <GridPane fx:id="gridPane" layoutY="30.0">
+      <GridPane fx:id="gridPane" hgap="10.0" layoutY="30.0" vgap="10.0">
          <!-- GridPane contents will be populated by the Java code -->
       </GridPane>
    </children>
